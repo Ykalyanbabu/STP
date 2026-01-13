@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Citizen Traffic Suggestion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Leaflet Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Inter, Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden; /* 🚫 No Scroll */
+  background:#f4f6f9;
+}
+
+/* Layout */
+.wrapper{
+  display:flex;
+  height:100vh;
+}
+
+/* Map */
+#map{
+  width:55%;
+  height:100%;
+}
+
+/* Form Panel */
+.panel{
+  width:45%;
+  padding:20px;
+  background:#ffffff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+h2{
+  margin:0 0 6px;
+  color:#0b5ed7;
+}
+
+p{
+  margin:0 0 14px;
+  color:#555;
+  font-size:14px;
+}
+
+/* Form */
+label{
+  font-size:13px;
+  margin-top:8px;
+  display:block;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:4px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:13px;
+}
+
+textarea{
+  height:60px;
+  resize:none;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+}
+
+button{
+  margin-top:14px;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#0b5ed7,#2ecc71);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box{
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  width:300px;
+}
+
+.modal-box h3{
+  color:#0b5ed7;
+  margin-bottom:10px;
+}
+
+.modal-box button{
+  margin-top:15px;
+  width:100%;
+}
+
+/* Mobile Fit */
+@media(max-width:768px){
+  .wrapper{
+    flex-direction:column;
+  }
+  #map{
+    width:100%;
+    height:45%;
+  }
+  .panel{
+    width:100%;
+    height:55%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Form -->
+  <div class="panel">
+    <h2>Traffic Suggestion</h2>
+    <p>Select area on map & submit your suggestion</p>
+
+    <form id="form">
+      <div class="row">
+        <div>
+          <label>Latitude</label>
+          <input type="text" id="lat" readonly>
+        </div>
+        <div>
+          <label>Longitude</label>
+          <input type="text" id="lng" readonly>
+        </div>
+      </div>
+
+      <label>Suggestion</label>
+      <textarea required placeholder="Describe traffic issue..."></textarea>
+
+      <label>Upload</label>
+      <input type="file">
+
+      <label>Mobile Number</label>
+      <input type="tel" id="mobile" placeholder="10-digit mobile" required>
+
+      <label>Email ID</label>
+      <input type="email" placeholder="example@email.com" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>✅ Submitted</h3>
+    <p>Reference Number</p>
+    <strong id="ref"></strong>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+const map = L.map('map').setView([17.3850,78.4867],12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+let marker;
+map.on('click', e=>{
+  document.getElementById('lat').value = e.latlng.lat.toFixed(6);
+  document.getElementById('lng').value = e.latlng.lng.toFixed(6);
+  marker ? marker.setLatLng(e.latlng) : marker = L.marker(e.latlng).addTo(map);
+});
+
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const mobile=document.getElementById('mobile').value;
+  if(!/^[0-9]{10}$/.test(mobile)){
+    alert("Enter valid mobile number");
+    return;
+  }
+  document.getElementById('ref').innerText =
+    "TRAFFIC-" + new Date().getFullYear() + "-" + Math.floor(100000+Math.random()*900000);
+  document.getElementById('modal').style.display="flex";
+  e.target.reset();
+});
+
+function closeModal(){
+  document.getElementById('modal').style.display="none";
+}
+</script>
+
+</body>
+</html>
