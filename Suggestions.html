@@ -29,7 +29,33 @@
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+<style>
+    label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
 
+select {
+    width: 100%;
+    padding: 13px 7px;
+    border: 1px solid #dcdcdc;
+    
+    background: #fff;
+    cursor: pointer;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #0b5ed72e;
+    font-size: 14px;
+    background: #f4fbff;
+}
+
+select:disabled {
+    background: #f1f1f1;
+    cursor: not-allowed;
+}
+</style>
 </head>
 
 <body>
@@ -255,11 +281,26 @@
           <label>Longitude<span class="red">*</span></label>
           <input type="text" id="lng" readonly required>
         </div>
+        
         <div style="width: 203%;">
             <label>Suggestion<span class="red">*</span></label>
       <textarea id="suggestion" placeholder="Describe traffic issue or suggestion..." required></textarea>
         </div>
       </div>
+      <div class="col-md-12" style="
+    padding: 0px !important;
+">
+            <div class="col-md-4"><label>Citizen Name</label>
+      <input type="tel" id="name" placeholder="Enter Citizen Name" required></div>
+            <div class="col-md-4"><label for="actionPoint">Action Point<span class="red">*</span></label>
+      <select id="actionPoint">
+            <option value="">Select action point</option>
+        </select></div>
+            <div class="col-md-4"><label for="subActionPoint">Sub Action Point<span class="red">*</span></label>
+      <select id="subActionPoint" disabled>
+            <option value="">Select sub action point</option>
+        </select></div>
+        </div>
 
       
 
@@ -533,7 +574,85 @@ function closeModal() {
 }
 
 </script>
+<script>
+    const actionData = {
+    "Remove footpaths encroachment / illegal parking": [
+        "Enforcement of parking restrictions",
+        "Relocation of vendors and notification of vending zones"
+    ],
+    "One way / Alternate routes": [
+        "Introduce one way traffic in congested stretches",
+        "Notification of alternate routes with signage"
+    ],
+    "Betterment of pedestrian facilities": [
+        "Shading and beautification of footpath",
+        "Tactile paving and ramps for accessibility",
+        "Improved street lighting"
+    ],
+    "Develop parking spaces": [
+        "Open multi level car parking facilities",
+        "Expansion of on street parking"
+    ],
+    "Redevelopment of existing roads & construction of new roads": [
+        "Land acquisition for widening and new corridors",
+        "Repair and strengthening of existing stretches",
+        "Construction of roads and bypasses"
+    ],
+    "Area based demand management": [
+        "Parking charges",
+        "Odd even restrictions",
+        "Area based control / restrictions",
+        "Parking permits",
+        "Congestion pricing"
+    ],
+    "Goods movement plan": [
+        "Restriction of heavy vehicles during peak hours",
+        "Designated loading / unloading points",
+        "Fixed delivery timings"
+    ],
+    "Intelligent traffic management": [
+        "Smart traffic lights",
+        "Display of live traffic updates on boards and apps"
+    ],
+    "High capacity bus corridors": [
+        "Launch of new buses on key routes",
+        "Dedicated bus lanes"
+    ],
+    "App based commutes (scaling stems)": [
+        "Scaling stems buses",
+        "Car pooling / sharing",
+        "Scaling ride shillong public e bike sharing"
+    ]
+};
 
+const actionSelect = document.getElementById("actionPoint");
+const subActionSelect = document.getElementById("subActionPoint");
+
+// Populate Action Points
+Object.keys(actionData).forEach(action => {
+    const option = document.createElement("option");
+    option.value = action;
+    option.textContent = action;
+    actionSelect.appendChild(option);
+});
+
+// On change load Sub Action Points
+actionSelect.addEventListener("change", function () {
+    subActionSelect.innerHTML = `<option value="">Select sub action point</option>`;
+    subActionSelect.disabled = true;
+
+    if (this.value && actionData[this.value]) {
+        actionData[this.value].forEach(sub => {
+            const option = document.createElement("option");
+            option.value = sub;
+            option.textContent = sub;
+            subActionSelect.appendChild(option);
+        });
+        subActionSelect.disabled = false;
+    }
+});
+
+</script>
 
 </body>
 
