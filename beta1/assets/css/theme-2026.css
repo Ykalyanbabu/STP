@@ -1,0 +1,65 @@
+nav.navigation.navbar.navbar-default.Menubar.original {
+    background: linear-gradient(270deg, #FFCC00 -2.08%, #C12223 115.15%) !important;
+}
+a.btn {
+    background: #fd7a01 !important;
+}
+a.btn.outline:hover {
+    background: #0eaa1e !important;
+}
+a.btn.outline {
+    border-color: #0eaa1e;
+    background: #fff !important;
+    color: #0eaa1e;
+}
+
+a.login {
+    background: linear-gradient(to left, #FF9800, #0eaa1e) !important;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px !important;
+    box-shadow: 1px 1px 3px 2px #786b6bd9;
+    width: 118% !important;
+    height: 33px;
+    font-weight: 600 !important;
+    padding: 6px 25px !important;
+    font-size: 18px !important;
+    font-family: 'Poppins';
+    color: #fff !important;
+}
+
+.topbar {
+   background-image: linear-gradient(to bottom, #055e09 0%, #651e08 100%) !important;
+}
+
+.section-title h2, .section-title-s2 h2, .section-title-s3 h2, .section-title-s4 h2, .section-title-s5 h2 {
+    font-size: 38px;
+    font-size: 2.375rem;
+    font-weight: bold;
+    margin: 0.1em 0 0;
+    font-family: "montserratbold", sans-serif;
+    font-size: 36px !important;
+    display: inline-block;
+    background: linear-gradient(92.61deg, #673AB7 0%, #E91E63 0%, #327602 116.86%, #4CAF50 182.36%, #4CAF50 246.57%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-section {
+    padding: 15px 0 15px;
+    /* background: linear-gradient(45deg, rgb(128 0 128) 0%, rgb(116 15 214 / 71%) 100%), url(../images/fotterbg321.png) center bottom no-repeat; */
+    
+    background: url(../images/menubg1.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.service-grids.clearfix .fi:before {
+    
+    background: linear-gradient(to bottom right, #FFEB3B, #F44336) !important;
+   
+}
+.lower-footer {
+    background: radial-gradient(circle 975px at 2.6% 48.3%, rgb(131 38 8) 0%, #9C27B0 99.7%) !important;
+}
