@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG-iPASS - AI Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="vendor/chartjs/chart.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <!-- <i class="fas fa-brain brand-icon"></i> -->
+                 <img src="assets/images/favicon.jpg" alt="TG-iPASS Logo" class="brand-logo mb-0" style="width: 20%;">
+                <span class="brand-text">TG-iPASS</span>
+            </div>
+            <button class="sidebar-toggle d-lg-none" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-menu">
+            <!-- Main Navigation -->
+            <div class="menu-section">
+                <div class="menu-section-title">Main</div>
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link active">
+                            <i class="fas fa-tachometer-alt menu-icon"></i>
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-analytics.html" class="menu-link">
+                            <i class="fas fa-chart-line menu-icon"></i>
+                            <span class="menu-text">Analytics Dashboard</span>
+                            <span class="menu-badge info">Hot</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-social-media-manager.html" class="menu-link">
+                            <i class="fas fa-hashtag menu-icon"></i>
+                            <span class="menu-text">Pre-Establishment</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-cs-monitor.html" class="menu-link">
+                            <i class="fas fa-headset menu-icon"></i>
+                            <span class="menu-text">Pre-Operational</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="menu-section">
+                <div class="menu-section-title">Tools</div>
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="ai-chat.html" class="menu-link">
+                            <i class="fas fa-comments menu-icon"></i>
+                            <span class="menu-text">Land Allotment</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-tld-finder.html" class="menu-link">
+                            <i class="fas fa-globe menu-icon"></i>
+                            <span class="menu-text">Incentives</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-writer.html" class="menu-link">
+                            <i class="fas fa-pen-fancy menu-icon"></i>
+                            <span class="menu-text">Renewals</span>
+                            <!-- <span class="menu-badge warning">Pro</span> -->
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-image.html" class="menu-link">
+                            <i class="fas fa-image menu-icon"></i>
+                            <span class="menu-text">Payments</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-models.html" class="menu-link">
+                            <i class="fas fa-robot menu-icon"></i>
+                            <span class="menu-text">Griveance</span>
+                            <span class="menu-badge warning">24</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-tools-library.html" class="menu-link">
+                            <i class="fas fa-toolbox menu-icon"></i>
+                            <span class="menu-text">Respond To Query</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Management -->
+           
+
+            <!-- Administration -->
+            
+
+            <!-- Templates -->
+            
+
+            <!-- Authentication -->
+           
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="d-flex align-items-center">
+                <div class="user-details">
+                    
+                    <div class="user-role ml-2">Design & Developed by</div>
+                    <!-- <div class="user-name">CMS</div> -->
+                </div>
+                <div class="" style="width: 45%;">
+                    <!-- <i class="fas fa-user-circle"></i> -->
+                     <img src="assets/images/flogo.jpg" alt="User Avatar" style="width: 100%;">
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="sidebar-toggle d-lg-none" id="mobileSidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="sidebar-collapse-toggle d-none d-lg-block" id="sidebarCollapseToggle" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Toggle Sidebar" data-bs-original-title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Welcome to Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="btn btn-icon theme-toggle" id="themeToggle" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Toggle Theme" data-bs-original-title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-calendar"></i> Last 30 Days
+                        </button>
+                        <ul class="dropdown-menu" style="">
+                            <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                            <li><a class="dropdown-item" href="#">Last 30 Days</a></li>
+                            <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
+                            <li><a class="dropdown-item" href="#">Custom Range</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-secondary">
+                        <i class="fas fa-download"></i> Export Report
+                    </button>
+                </div>
+                
+                                <div class="dropdown user-dropdown">
+                    <button class="btn user-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar-wrapper">
+                            <img src="assets/images/user-avatar.jpg" alt="User Avatar" class="user-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="user-avatar-fallback">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="user-info-header d-none d-md-block">
+                            <div class="user-name-header">John Doe</div>
+                            <div class="user-status">
+                                <span class="status-indicator online"></span>
+                                <span class="status-text">Online</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end user-dropdown-menu" style="">
+                        <div class="dropdown-header">
+                            <div class="user-profile-section">
+                                <div class="user-avatar-large">
+                                    <img src="assets/images/user-avatar.jpg" alt="User Avatar" class="user-avatar-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="user-avatar-fallback-large">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="status-badge online">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="user-details-dropdown">
+                                    <h6 class="user-name-dropdown">John Doe</h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item enhanced-item" href="profile.html">
+                            <div class="item-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">My Profile</span>
+                                <span class="item-subtitle">View and manage profile</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item" href="edit-profile.html">
+                            <div class="item-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Edit Profile</span>
+                                <span class="item-subtitle">Update your information</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item" href="settings.html">
+                            <div class="item-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Settings</span>
+                                <span class="item-subtitle">Preferences and privacy</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item enhanced-item help-item" href="#" onclick="showHelpModal()">
+                            <div class="item-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Help &amp; Support</span>
+                                <span class="item-subtitle">Get assistance</span>
+                            </div>
+                            <i class="fas fa-external-link-alt item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item logout-item" href="user-login.html">
+                            <div class="item-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Sign Out</span>
+                                <span class="item-subtitle">Logout from account</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content">
+            <!-- Stats Cards -->
+
+            
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="stat-card" style="background: linear-gradient(9deg, #d2dbff, #eed5ffcc);animation-name: upDown;">
+                        <div class="stat-icon bg-primary">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">24</h3>
+                            <p class="stat-label">AI Models <span class="stat-change positive">+12%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #d7f6ff, #d9ffdc);animation-name: downUp;">
+                        <div class="stat-icon bg-success">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">1,247</h3>
+                            <p class="stat-label">API Calls <span class="stat-change positive">+8%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #ffe2bf, #d4dbff);animation-name: upDown;">
+                        <div class="stat-icon bg-warning">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">567</h3>
+                            <p class="stat-label">Images Generated <span class="stat-change positive">+15%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                   <div class="stat-card" style="background: linear-gradient(135deg, #fff7b0, #ffc8db);animation-name: downUp;">
+                        <div class="stat-icon bg-danger">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">89%</h3>
+                            <p class="stat-label">Uptime <span class="stat-change negative">-2%</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="dashboard-card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Modals</h5>
+                </div>
+                <div class="card-body">
+                    <a type="button" href="Internalpage.html" class="btn btn-primary me-2">
+                        
+    Generate Button Link-1
+                    </a>
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                        
+    Generate Button Link-2
+                    </button>
+                </div>
+            </div>
+            <!-- Charts Row -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h5 class="card-title">AI Usage Analytics</h5>
+                            <div class="card-actions">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="usageChart" height="375"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Model Performance</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="performanceChart" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Quick Actions -->
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-primary">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6>GPT-4 Model Training Completed</h6>
+                                        <p>Advanced language model training finished successfully</p>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-success">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6>Image Generation Batch Complete</h6>
+                                        <p>Generated 50 images using DALL-E model</p>
+                                        <small class="text-muted">4 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-warning">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6>Analytics Report Generated</h6>
+                                        <p>Monthly performance report is ready for review</p>
+                                        <small class="text-muted">6 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Quick Actions</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions">
+                                <a href="ai-chat.html" class="quick-action-btn">
+                                    <i class="fas fa-comments"></i>
+                                    <span>Start AI Chat</span>
+                                </a>
+                                <a href="ai-image.html" class="quick-action-btn">
+                                    <i class="fas fa-image"></i>
+                                    <span>Generate Image</span>
+                                </a>
+                                <a href="ai-analytics.html" class="quick-action-btn">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>View Analytics</span>
+                                </a>
+                                <a href="ai-models.html" class="quick-action-btn">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Manage Models</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card mt-4">
+                        <div class="card-header">
+                            <h5 class="card-title">System Status</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="status-list">
+                                <div class="status-item position-relative">
+                                    <span class="status-label">API Status</span>
+                                    <span class="status-badge bg-success">Online</span>
+                                </div>
+                                <div class="status-item position-relative">
+                                    <span class="status-label">GPU Cluster</span>
+                                    <span class="status-badge bg-success">Active</span>
+                                </div>
+                                <div class="status-item position-relative">
+                                    <span class="status-label">Storage</span>
+                                    <span class="status-badge bg-warning">80% Used</span>
+                                </div>
+                                <div class="status-item position-relative">
+                                    <span class="status-label">Backup</span>
+                                    <span class="status-badge bg-info">Updated</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- jQuery -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/charts.js"></script>
+</body>
+</html>

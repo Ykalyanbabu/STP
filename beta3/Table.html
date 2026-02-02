@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG-iPASS - AI Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="vendor/chartjs/chart.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    
+
+    
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <!-- <i class="fas fa-brain brand-icon"></i> -->
+                 <img src="assets/images/favicon.jpg" alt="TG-iPASS Logo" class="brand-logo mb-0" style="width: 20%;">
+                <span class="brand-text">TG-iPASS</span>
+            </div>
+            <button class="sidebar-toggle d-lg-none" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-menu">
+            <!-- Main Navigation -->
+            <div class="menu-section">
+                <div class="menu-section-title">Main</div>
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link active">
+                            <i class="fas fa-tachometer-alt menu-icon"></i>
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-analytics.html" class="menu-link">
+                            <i class="fas fa-chart-line menu-icon"></i>
+                            <span class="menu-text">Analytics Dashboard</span>
+                            <span class="menu-badge info">Hot</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-social-media-manager.html" class="menu-link">
+                            <i class="fas fa-hashtag menu-icon"></i>
+                            <span class="menu-text">Pre-Establishment</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-cs-monitor.html" class="menu-link">
+                            <i class="fas fa-headset menu-icon"></i>
+                            <span class="menu-text">Pre-Operational</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="menu-section">
+                <div class="menu-section-title">Tools</div>
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="ai-chat.html" class="menu-link">
+                            <i class="fas fa-comments menu-icon"></i>
+                            <span class="menu-text">Land Allotment</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-tld-finder.html" class="menu-link">
+                            <i class="fas fa-globe menu-icon"></i>
+                            <span class="menu-text">Incentives</span>
+                            <span class="menu-badge success">New</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-writer.html" class="menu-link">
+                            <i class="fas fa-pen-fancy menu-icon"></i>
+                            <span class="menu-text">Renewals</span>
+                            <!-- <span class="menu-badge warning">Pro</span> -->
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-image.html" class="menu-link">
+                            <i class="fas fa-image menu-icon"></i>
+                            <span class="menu-text">Payments</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-models.html" class="menu-link">
+                            <i class="fas fa-robot menu-icon"></i>
+                            <span class="menu-text">Griveance</span>
+                            <span class="menu-badge warning">24</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="ai-tools-library.html" class="menu-link">
+                            <i class="fas fa-toolbox menu-icon"></i>
+                            <span class="menu-text">Respond To Query</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Management -->
+           
+
+            <!-- Administration -->
+            
+
+            <!-- Templates -->
+            
+
+            <!-- Authentication -->
+           
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="d-flex align-items-center">
+                <div class="user-details">
+                    
+                    <div class="user-role ml-2">Design & Developed by</div>
+                    <!-- <div class="user-name">CMS</div> -->
+                </div>
+                <div class="" style="width: 45%;">
+                    <!-- <i class="fas fa-user-circle"></i> -->
+                     <img src="assets/images/flogo.jpg" alt="User Avatar" style="width: 100%;">
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="sidebar-toggle d-lg-none" id="mobileSidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="sidebar-collapse-toggle d-none d-lg-block" id="sidebarCollapseToggle" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Toggle Sidebar" data-bs-original-title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="btn btn-icon theme-toggle" id="themeToggle" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Toggle Theme" data-bs-original-title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                </div>
+                
+                                <div class="dropdown user-dropdown">
+                    <button class="btn user-menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar-wrapper">
+                            <img src="assets/images/user-avatar.jpg" alt="User Avatar" class="user-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="user-avatar-fallback">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="user-info-header d-none d-md-block">
+                            <div class="user-name-header">John Doe</div>
+                            <div class="user-status">
+                                <span class="status-indicator online"></span>
+                                <span class="status-text">Online</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end user-dropdown-menu" style="">
+                        <div class="dropdown-header">
+                            <div class="user-profile-section">
+                                <div class="user-avatar-large">
+                                    <img src="assets/images/user-avatar.jpg" alt="User Avatar" class="user-avatar-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="user-avatar-fallback-large">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="status-badge online">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="user-details-dropdown">
+                                    <h6 class="user-name-dropdown">John Doe</h6>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item enhanced-item" href="profile.html">
+                            <div class="item-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">My Profile</span>
+                                <span class="item-subtitle">View and manage profile</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item" href="edit-profile.html">
+                            <div class="item-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Edit Profile</span>
+                                <span class="item-subtitle">Update your information</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item" href="settings.html">
+                            <div class="item-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Settings</span>
+                                <span class="item-subtitle">Preferences and privacy</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item enhanced-item help-item" href="#" onclick="showHelpModal()">
+                            <div class="item-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Help &amp; Support</span>
+                                <span class="item-subtitle">Get assistance</span>
+                            </div>
+                            <i class="fas fa-external-link-alt item-arrow"></i>
+                        </a>
+                        <a class="dropdown-item enhanced-item logout-item" href="user-login.html">
+                            <div class="item-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-title">Sign Out</span>
+                                <span class="item-subtitle">Logout from account</span>
+                            </div>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content">
+            <!-- Stats Cards -->
+
+            
+            
+<div class="dashboard-card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Modals</h5>
+                </div>
+                <div class="card-body">
+                    <p>Internal page</p>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Recent Support Tickets</h5>
+                        </div>
+                        <div class="card-body">
+                            
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="ticketSearch" placeholder="Search tickets...">
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="open">Open</option>
+                            <option value="pending">Pending</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket ID</th>
+                                            <th>Customer</th>
+                                            <th>Channel</th>
+                                            <th>Priority</th>
+                                            <th>Status</th>
+                                            <th>Agent</th>
+                                            <th>Sentiment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-ticket-alt text-primary me-2"></i>
+                                                    #CS-2847
+                                                </div>
+                                            </td>
+                                            <td>Sarah Johnson</td>
+                                            <td>
+                                                <div class="channel-icon channel-email">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </td>
+                                            <td><span class="priority-tag priority-high" data-bs-original-title="Response within 2 hours">High</span></td>
+                                            <td><span class="ticket-status status-open">Open</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="agent-avatar me-2">MK</div>
+                                                    Mike Chen
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="sentiment-indicator sentiment-negative">
+                                                    <i class="fas fa-frown"></i>
+                                                    Negative
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-ticket-alt text-primary me-2"></i>
+                                                    #CS-2846
+                                                </div>
+                                            </td>
+                                            <td>David Wilson</td>
+                                            <td>
+                                                <div class="channel-icon channel-chat">
+                                                    <i class="fas fa-comments"></i>
+                                                </div>
+                                            </td>
+                                            <td><span class="priority-tag priority-medium" data-bs-original-title="Response within 8 hours">Medium</span></td>
+                                            <td><span class="ticket-status status-resolved">Resolved</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="agent-avatar me-2">AI</div>
+                                                    AI Assistant
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="sentiment-indicator sentiment-positive">
+                                                    <i class="fas fa-smile"></i>
+                                                    Positive
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-ticket-alt text-primary me-2"></i>
+                                                    #CS-2845
+                                                </div>
+                                            </td>
+                                            <td>Emma Rodriguez</td>
+                                            <td>
+                                                <div class="channel-icon channel-phone">
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                            </td>
+                                            <td><span class="priority-tag priority-urgent" data-bs-original-title="Immediate response required">Urgent</span></td>
+                                            <td><span class="ticket-status status-pending">Pending</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="agent-avatar me-2">SL</div>
+                                                    Sarah Lee
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="sentiment-indicator sentiment-neutral">
+                                                    <i class="fas fa-meh"></i>
+                                                    Neutral
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-ticket-alt text-primary me-2"></i>
+                                                    #CS-2844
+                                                </div>
+                                            </td>
+                                            <td>James Brown</td>
+                                            <td>
+                                                <div class="channel-icon channel-social">
+                                                    <i class="fa-brands fa-x-twitter"></i>
+                                                </div>
+                                            </td>
+                                            <td><span class="priority-tag priority-low" data-bs-original-title="Response within 24 hours">Low</span></td>
+                                            <td><span class="ticket-status status-closed">Closed</span></td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="agent-avatar me-2">AI</div>
+                                                    AI Assistant
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="sentiment-indicator sentiment-positive">
+                                                    <i class="fas fa-smile"></i>
+                                                    Positive
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Charts Row -->
+           
+        </div>
+    </main>
+
+    <!-- jQuery -->
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Customer Support Charts JS -->
+    <script src="assets/js/charts-customer-support.js"></script>
+</body>
+</html>

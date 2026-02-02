@@ -1,0 +1,220 @@
+.page-wrapper {
+ 
+    padding-top: 80px;
+ 
+}
+.user-menu {
+margin: 10px 0px;
+    }
+.sidebar {
+    top: 80px;
+}
+.header {
+	height: 80px;
+}
+@media only screen and (min-width: 992px) {
+    #toggle_btn{
+		height: 80px;
+	}
+	.dashboard-box {
+    height: 180px;
+        padding: 20px 0px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #3a8ab7, #f8f9fa);
+        box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        gap: 20rem !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+}
+
+.dashboard-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+            font-size: 32px;
+        color: #0b3654;
+        margin-bottom: 15px;
+        font-weight: 900;
+        background: #e5e5e5ab;
+        border-radius: 60px;
+        width: 50%;
+        margin-left: 27%;
+}
+
+.btn-click {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-click:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.header .header-left .logo img {
+	max-height: 70px;
+        width: auto;
+        margin-top: 5px;
+}
+.sidebar {
+    
+	/* background: url(assets/img/sidebanner.jpg);
+        background-position: top;
+        background-size: cover; */
+
+		/* background: linear-gradient(353deg, rgb(6 15 68 / 45%) 0%, rgb(4 3 3 / 2%) 100%), url(assets/img/sidebanner.jpg) center center no-repeat; */
+		background: linear-gradient(88deg, rgb(1 13 84) 0%, rgb(0 0 0 / 0%) 100%), url(../img/sidebanner.jpg) center center no-repeat;
+        background-position: top;
+        background-size: cover;
+
+		
+}
+.page-wrapper {
+    background: linear-gradient(353deg, rgb(6 15 68 / 45%) 0%, rgb(4 3 3 / 2%) 100%), url(../img/dbbg.jpg) center center no-repeat;
+    background-position: center;
+    background-size: cover;
+	opacity: 1;
+}
+.card {
+    border: 1px dotted #8509a5;
+    margin-bottom: 1.875rem;
+}
+.sidebar-menu > ul > li > a:hover {
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+.sidebar-menu li.active a {
+	background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+
+.card {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+
+.zoom-icon img {
+  width: 50px; /* Adjust size as needed */
+  animation: zoomEffect 3s infinite ease-in-out;
+}
+
+/* Keyframes for zooming */
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Zoom in slightly */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.gradient-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #7e00ff;
+      background: #fff;
+      border: 3px solid;
+      border-image-slice: 1;
+      
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gradient-button:hover {
+      background: linear-gradient(90deg, #00f0ff, #7e00ff);
+      color: white;
+    }
+
+    .sparkles-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+		
+	
+	.ai-button-group {
+      display: inline-flex;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid #e0e6ed;
+    }
+
+    .ai-button {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #444;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .ai-button:not(:last-child) {
+      border-right: 1px solid #e0e6ed;
+    }
+
+    .ai-button:hover {
+      background-color: #f0f4ff;
+      color: #1a73e8;
+    }
+
+    .ai-button svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.8;
+      stroke: currentColor;
+      fill: none;
+    }
+	h3.page-title.zoom-icon {
+    width: 75%;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* or center */
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 200px; /* Adjust the base width as needed */
+}
