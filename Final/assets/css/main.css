@@ -820,8 +820,14 @@ section,
 .hotel-hero .hero-content .lead {
   font-size: 1.2rem;
   font-weight: 300;
-  margin-bottom: 2rem;
-  
+  *margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.about .achievements-section {
+    margin: 0px !important;
+    padding: 20px 40px !important;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -1056,6 +1062,7 @@ section,
   display: flex;
   gap: 2rem;
   margin: 2rem 0;
+  justify-content: flex-end;
 }
 
 @media (max-width: 576px) {
@@ -1070,15 +1077,15 @@ section,
 }
 
 .about-home .about-content .stats-row .stat-item .stat-number {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: #033124;
   font-family: var(--heading-font);
 }
 
 .about-home .about-content .stats-row .stat-item .stat-label {
-  font-size: 0.875rem;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 1.2rem;
+  color: #fff;
   margin-top: 0.25rem;
 }
 
@@ -7399,4 +7406,86 @@ transform 0.3s ease-in-out;
   50% { transform: translate(-2px, 2px); }
   75% { transform: translate(2px, 2px); }
   100% { transform: translate(0px, 0px); }
+}
+
+
+
+.city-compare-section {
+  padding: 35px 20px;
+  background: #f4f9f7;
+}
+
+.city-compare-section .container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  
+  font-weight: 700;
+  color: #0c3b2e;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #4f6f65;
+  margin-bottom: 40px;
+}
+
+.accordion-item {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 6px 24px;
+  background: #1e5b4f;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background: #17463c;
+}
+
+.accordion-header .icon {
+  font-size: 26px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content ul {
+  padding: 20px 30px;
+  margin: 0;
+}
+
+.accordion-content li {
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+.accordion-item.active .icon {
+  transform: rotate(45deg);
 }
