@@ -27,7 +27,55 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+<!-- <style>
+ section#events-cards{
+.row {
+  display: flex;
+  gap: 16px;
+}
 
+/* Default card behavior */
+.row > [class*="col-"] {
+  flex: 1;
+  transition: flex 0.4s ease, transform 0.4s ease;
+}
+
+/* Card base */
+.event-item {
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+/* Hover: expand active card */
+.row > [class*="col-"]:hover {
+  flex: 2.2;
+}
+
+/* Shrink non-hover cards */
+.row:hover > [class*="col-"]:not(:hover) {
+  flex: 0.8;
+  opacity: 0.75;
+}
+
+/* Smooth content behavior */
+.event-content {
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+/* Improve readability when expanded */
+.row > [class*="col-"]:hover .event-content {
+  transform: scale(1.02);
+}
+
+/* Optional: subtle shadow on hover */
+.row > [class*="col-"]:hover .event-item {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+}
+
+</style> -->
   
 </head>
 
@@ -305,13 +353,16 @@
              
               <div class="event-content">
                 <h4>Better Roads & Footpaths</h4>
-                <p>Safer walking, smoother roads, improved flow.</p>
+                <p>Clear roads and footpaths, make walking safer, and improve vehicle flow.</p>
                 <div class="event-features">
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Street vendor relocation</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> One-way & alternate roads</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Relocation of street vendors</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Introduction of one‑way traffic & alternate roads</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Beautification and shading of footpaths </span>
                   <span class="feature-item"><i class="bi bi-check-circle"></i> Accessible footpaths</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Illegal parking control</span>
-                  
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Improvement of street lighting</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Enforcement against illegal parking</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Development of parking lots and on‑street parking regularization</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Repair, widening, and construction of roads & bypasses</span>
                   
                 </div>
                 <a href="hotel-events.html" class="event-link">
@@ -326,12 +377,15 @@
             
               <div class="event-content">
                 <h4>Smart Enforcement<br/><br/></h4>
-                <p>Technology-driven traffic<br/> regulation.</p>
+                <p>Reduce congestion through better rules, enforcement, and technology.
+.</p>
                 <div class="event-features">
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Congestion pricing</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Peak-hour vehicle control</span>
-                   <span class="feature-item"><i class="bi bi-check-circle"></i> Smart traffic signals</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Unified traffic control</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Parking charges, odd‑even restrictions, permits, congestion pricing</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Heavy vehicle restrictions during peak hours</span>
+                   <span class="feature-item"><i class="bi bi-check-circle"></i> Loading/unloading points and fixed delivery timings</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Smart traffic lights</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Unified traffic control centre</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Shillong mobility app</span>
                 </div>
                 <a href="hotel-events.html" class="event-link">
                   Explore Details <i class="bi bi-arrow-right"></i>
@@ -344,13 +398,17 @@
             <div class="event-item" data-aos="fade-up" data-aos-delay="300">
             
               <div class="event-content">
-                <h4>Shared & Public <br/>Mobility</h4>
-                <p>Reliable, green transport<br/> options.</p>
+                <h4>Reliable shared and public Mobility
+</h4>
+                <p>Provide reliable, efficient, and modern transport options for all.</p>
                 <div class="event-features">
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Dedicated bus lanes</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> STEMS bus expansion</span>
-                   <span class="feature-item"><i class="bi bi-check-circle"></i> E-bike & taxi sharing</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> New buses and dedicated bus lanes</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Scaling of STEMS buses</span>
+                   <span class="feature-item"><i class="bi bi-check-circle"></i> Carpooling and ride sharing</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Ride Shillong e‑bike sharing</span>
                   <span class="feature-item"><i class="bi bi-check-circle"></i> Digital taxi booking</span>
+                   <span class="feature-item"><i class="bi bi-check-circle"></i> Electric taxis and shared taxis</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Ropeway between Shillong and New Shillong</span>
                 </div>
                 <a href="hotel-events.html" class="event-link">
                   Explore Details <i class="bi bi-arrow-right"></i>
@@ -363,11 +421,12 @@
             <div class="event-item" data-aos="fade-up" data-aos-delay="100">
               
               <div class="event-content">
-                <h4>Citizens & City<br/>Together</h4>
-                <p>Participatory governance<br/>model.</p>
+                <h4>Citizens & City Together<br/><br/></h4>
+                <p>Bring government services closer and involve citizens directly in solutions.
+</p>
                 <div class="event-features">
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Office shift to New Shillong</span>
-                  <span class="feature-item"><i class="bi bi-check-circle"></i> Good Samaritan program</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Shifting of administrative offices to New Shillong</span>
+                  <span class="feature-item"><i class="bi bi-check-circle"></i> Good Samaritan Program</span>
                    <span class="feature-item"><i class="bi bi-check-circle"></i> Awareness campaigns</span>
                   
                 </div>
