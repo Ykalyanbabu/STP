@@ -7570,3 +7570,7 @@ transform 0.3s ease-in-out;
 .accordion-item.active .icon {
   transform: rotate(45deg);
 }
+.banner-action {
+    display: flex;
+    justify-content: space-evenly;
+}
