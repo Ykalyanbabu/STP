@@ -224,8 +224,8 @@ button{
 
         <div class="reservation-wrapper">
 <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Citizen Traffic Suggestion</span>
-        <h2>Citizen Traffic Suggestion</h2>
+        <span class="description-title">Share your thoughts</span>
+        <h2>Share your thoughts</h2>
         <p>Select location on map and submit your suggestion.</p>
       </div><!-- End Section Title -->
           <!-- <div class="text-center" data-aos="fade-up" data-aos-delay="200">
@@ -256,7 +256,34 @@ button{
 
 
                   <div class="form-section">
-                    
+                    <div class="form-grid">
+                      <div class="form-group">
+                        <label for="primary-guest" class="form-label">Enter Place Name*</label>
+                        <input type="text" class="form-control" id="primary-guest" name="primary_guest" required="">
+                      </div>
+                      <!-- <div class="form-group">
+                        <label for="contact-email" class="form-label">Action Point*</label>
+                        <select class="form-select" id="accommodation-type" name="accommodation_type">
+                        <option value="">No preference</option>
+                        <option value="classic">Classic Room</option>
+                        <option value="premium">Premium Room</option>
+                        <option value="junior-suite">Junior Suite</option>
+                        <option value="luxury-suite">Luxury Suite</option>
+                        <option value="penthouse">Penthouse Suite</option>
+                      </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-phone" class="form-label">Sub Action Point*</label>
+                        <select class="form-select" id="accommodation-type" name="accommodation_type">
+                        <option value="">No preference</option>
+                        <option value="classic">Classic Room</option>
+                        <option value="premium">Premium Room</option>
+                        <option value="junior-suite">Junior Suite</option>
+                        <option value="luxury-suite">Luxury Suite</option>
+                        <option value="penthouse">Penthouse Suite</option>
+                      </select>
+                      </div> -->
+                    </div>
                     
                     <div class="form-group">
                       <label for="additional-notes" class="form-label">Suggestion*</label>
@@ -291,6 +318,9 @@ button{
                       </select>
                       </div>
                     </div>
+
+
+
                     <div class="form-grid">
                       <div class="form-group">
                         <label for="primary-guest" class="form-label">Upload Photo</label>
@@ -519,14 +549,23 @@ function openTab(evt, tabName) {
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-const map = L.map('map').setView([17.3850,78.4867],12);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const map = L.map('map').setView([25.5788, 91.8933], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
 let marker;
-map.on('click', e=>{
+
+map.on('click', e => {
   document.getElementById('lat').value = e.latlng.lat.toFixed(6);
   document.getElementById('lng').value = e.latlng.lng.toFixed(6);
-  marker ? marker.setLatLng(e.latlng) : marker = L.marker(e.latlng).addTo(map);
+
+  if (marker) {
+    marker.setLatLng(e.latlng);
+  } else {
+    marker = L.marker(e.latlng).addTo(map);
+  }
 });
 
 document.getElementById('form').addEventListener('submit',e=>{
